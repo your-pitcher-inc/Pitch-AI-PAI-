@@ -2,8 +2,6 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from gigachat import GigaChat
 
-
-
 def MyPermit(permit):
     if type(permit) is str:
         l = ""

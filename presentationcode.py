@@ -23,6 +23,8 @@ def MyPermit(permit, contect):
     return str(response.choices[0].message.content)
 
 uslovia = ". Распиши это так, как будто ты делаешь доклад в очень строгой форме. Уложи это в менее 30 слов и одно предложение. Говори от третьего лица и не расписывай свои действия. Не принимай себя ни за мужчину, ни за женщину"
+
+
 #Выбор языков
 lang = input("Какой язык вы хотите использовать? (рус или англ) \n Wich language do you want to use? (rus or ing)").lower()
 if lang == "rus" or lang == "рус":
@@ -193,5 +195,7 @@ elif VariantOfTemplate.lower() == "no" or VariantOfTemplate.lower() == "нет":
     title.text = fifthTemplateslide
 
     content.text = (conclution)
+
+
 
 presentation.save("template.pptx")
