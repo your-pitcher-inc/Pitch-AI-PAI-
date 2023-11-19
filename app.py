@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
-from pptx import Presentation
-from pptx.util import Inches
-from presentationcode import create_presentation
+from code3b import create_presentation
 
 app = Flask(__name__)
 
