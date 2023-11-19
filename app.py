@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from code3b import create_presentation
+from code4b import create_presentation
 
 app = Flask(__name__)
 
@@ -18,12 +18,16 @@ def generate_presentation():
     plc = request.form['plc']
     year = request.form['year']
     vot = request.form['vot']
-    
-    # Check the value of vot and handle it accordingly in your presentation generation logic
-    
-    create_presentation(lang, qwsb, plos, doc, aut, mng, plc, year, vot, ...)
+    nos = request.form['nos']
+
+    print(f"Value of nos: {nos}")  # Add this line to print the value
+
+    nmos_values = [request.form.get(f'nmos_{i}', '') for i in range(int(nos))]
+
+    create_presentation(lang, qwsb, plos, doc, aut, mng, plc, year, vot, nos, nmos_values)
     
     return "Presentation generated successfully!"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
